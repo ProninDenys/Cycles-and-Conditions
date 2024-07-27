@@ -195,16 +195,16 @@ let oddCount = 0;
 
 // 2 step
 for (let i = 0; i < 10; i++) {
-    let number = prompt(`Please enter number ${i + 1}:`);
+    let numberInput = prompt(`Please enter number ${i + 1}:`);
 
     // 3 step
-    if (isNaN(number) || number === null || number.trim() === "") {
+    if (isNaN(numberInput) || numberInput === null || numberInput.trim() === "") {
         alert("Invalid input, please enter a valid number.");
         i--; // Repeat the current iteration
         continue;
     }
 
-    number = Number(number);
+    let number = Number(numberInput);
 
     // 4 step
     if (number > 0) {
@@ -248,4 +248,3 @@ function showNextDay() {
 
 // 3 step
 showNextDay();
-
