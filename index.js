@@ -2,14 +2,12 @@
 
 // 1 task 
 // User age
-let userAge = prompt("Please enter your age:");
+const userAge = Number(prompt("Please enter your age:"));
 
 // input is valid
-if (isNaN(userAge) || userAge === null || userAge.trim() === "" || userAge < 0) {
+if (userAge < 0) {
     alert("Please enter a valid age.");
 } else {
-    userAge = Number(userAge);
-    
     // Determine the user's category based on their age
     if (userAge >= 0 && userAge <= 11) {
         alert("You are a child.");
@@ -24,23 +22,11 @@ if (isNaN(userAge) || userAge === null || userAge.trim() === "" || userAge < 0) 
     }
 }
 
-
 // 2 task 
 let singleDigitNumber = prompt("Please enter a number from 0 to 9:");
 
-// Object to map numbers to special characters
-const specialCharacters = {
-    0: ')',
-    1: '!',
-    2: '@',
-    3: '#',
-    4: '$',
-    5: '%',
-    6: '^',
-    7: '&',
-    8: '*',
-    9: '('
-};
+// Array to map numbers to special characters
+const specialCharacters = [')', '!', '@', '#', '$', '%', '^', '&', '*', '('];
 
 // next step 
 if (singleDigitNumber !== null && singleDigitNumber.trim() !== "" && !isNaN(singleDigitNumber)) {
@@ -81,7 +67,7 @@ if (isNaN(rangeStart) || isNaN(rangeEnd) || rangeStart === null || rangeEnd === 
     alert(`The sum of all numbers from ${rangeStart} to ${rangeEnd} is: ${sum}`);
 }
 
-function gcd(a, b) {
+function greatestCommonDivisor(a, b) {
     while (b !== 0) {
         let temp = b;
         b = a % b;
@@ -104,12 +90,11 @@ if (isNaN(firstNumber) || isNaN(secondNumber) || firstNumber === null || secondN
     secondNumber = Number(secondNumber);
 
     // 3 step
-    let gcdResult = gcd(firstNumber, secondNumber);
+    let gcdResult = greatestCommonDivisor(firstNumber, secondNumber);
 
     // Results
     alert(`The greatest common divisor of ${firstNumber} and ${secondNumber} is: ${gcdResult}`);
 }
-
 
 // 5 TASK
 
@@ -134,7 +119,6 @@ if (isNaN(userNumber) || userNumber === null || userNumber.trim() === "") {
     alert(`All divisors of the number ${userNumber}: ${divisors.join(", ")}`);
 }
 
-
 // MEDIUM HW TASK 
 
 // 1 TASK 
@@ -154,7 +138,6 @@ if (isNaN(fiveDigitNumber) || fiveDigitNumber === null || fiveDigitNumber.trim()
         alert(`The number ${fiveDigitNumber} is not a palindrome.`);
     }
 }
-
 
 // 2 TASK 
 
